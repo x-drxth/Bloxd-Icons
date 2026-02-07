@@ -1,40 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="favicon.png">
-    <style>
-
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
 @font-face {
   font-family: 'Minecraft';
   src: url('minecraft-reg.ttf') format('truetype');
 }
-        
-    html, body {
-      font-family: 'Minecraft', monospace;
-      background-color: black;
-    }
-        
-    .main-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 50px 50px;
-    }
-        
-    .icon {
-        transition: transform 0.2s ease;
-    }
-    .icon:hover {
-        transform: scale(1.05);
-    }
-    </style>
+
+html, body {
+  font-family: 'Minecraft', monospace;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+
+/* Icon hover effect */
+.icon {
+  transition: transform 0.2s ease;
+  margin-bottom: 50px; /* space above cube */
+}
+.icon:hover {
+  transform: scale(1.05);
+}
+
+/* Cube styles */
+.cube-container {
+  perspective: 1000px;
+}
+
+.cube {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transform-style: preserve-3d;
+  transform: rotateX(-30deg) rotateY(30deg);
+  transition: transform 1s ease-in-out;
+  margin-top: 20px;
+}
+
+.cube-container:hover .cube {
+  transform: rotateX(-396.2deg) rotateY(30deg);
+}
+
+/* Cube faces */
+.cube div {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: 2px solid #000;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  line-height: 150px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Cube face positioning and textures */
+.front  { transform: rotateY(0deg) translateZ(75px); background-image: url('front.jpg'); }
+.back   { transform: rotateY(180deg) translateZ(75px); background-image: url('back.jpg'); }
+.right  { transform: rotateY(90deg) translateZ(75px); background-image: url('right.jpg'); }
+.left   { transform: rotateY(-90deg) translateZ(75px); background-image: url('left.jpg'); }
+.top    { transform: rotateX(90deg) translateZ(75px); background-image: url('top.jpg'); }
+.bottom { transform: rotateX(-90deg) translateZ(75px); background-image: url('bottom.jpg'); }
+
+</style>
 </head>
 <body>
-    <div class="main-container">
-            <a href="https://bloxd-icons.pages.dev/" target="">
-                <img src="bloxd-icons.png" alt="Bloxd Icons" class="icon">
-            </a>
+<div class="main-container">
+  <!-- Icon with hover effect -->
+  <a href="https://bloxd-icons.pages.dev/" target="_blank">
+    <img src="bloxd-icons.png" alt="Bloxd Icons" class="icon">
+  </a>
+
+  <!-- 3D Cube -->
+  <div class="cube-container">
+    <div class="cube">
+      <div class="front"></div>
+      <div class="back"></div>
+      <div class="right"></div>
+      <div class="left"></div>
+      <div class="top"></div>
+      <div class="bottom"></div>
     </div>
+  </div>
+</div>
 </body>
 </html>
