@@ -43,12 +43,11 @@ html, body {
   height: 150px;
   transform-style: preserve-3d;
   transform: rotateX(-30deg) rotateY(30deg);
-  transition: transform 1s ease-in-out;
   margin-top: 20px;
 }
 
 .cube-container:hover .cube {
-  transform: rotateX(-396.2deg) rotateY(30deg);
+  animation: flipOnce 1s ease-in-out forwards;
 }
 
 /* Cube faces */
@@ -73,6 +72,15 @@ html, body {
 .left   { transform: rotateY(-90deg) translateZ(75px); background-image: url('left.png'); }
 .top    { transform: rotateX(90deg) translateZ(75px); background-image: url('top.png'); }
 .bottom { transform: rotateX(-90deg) translateZ(75px); background-image: url('bottom.png'); }
+
+  @keyframes flipOnce {
+  from {
+    transform: rotateX(-30deg) rotateY(30deg);
+  }
+  to {
+    transform: rotateX(-396.2deg) rotateY(30deg);
+  }
+}
 
 </style>
 </head>
