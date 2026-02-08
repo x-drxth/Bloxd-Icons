@@ -1,117 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<link rel="icon" type="image/png" href="favicon.png">
-<style>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+
 @font-face {
   font-family: 'Minecraft';
   src: url('minecraft-reg.ttf') format('truetype');
 }
-
-html, body {
-  font-family: 'Minecraft', monospace;
-  background-color: black;
-  margin: 0;
-  padding: 0;
-}
-
-.main-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 50px;
-}
-
-/* Icon hover effect */
-.icon {
-  transition: transform 0.2s ease;
-  margin-bottom: 50px; /* space above cube */
-}
-.icon:hover {
-  transform: scale(1.05);
-}
-
-/* Cube styles */
-.cube-container {
-  perspective: 1000px;
-}
-
-.cube {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  transform-style: preserve-3d;
-  transform: rotateX(-30deg) rotateY(30deg);
-  margin-top: 20px;
-}
-
-.cube-container:hover .cube {
-  animation: flipOnce 1s ease-in-out forwards;
-}
-
-/* Cube faces */
-.cube div {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  border: 2px solid #000;
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  line-height: 150px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #fff;
-}
-
-/* Cube face positioning and textures */
-.front  { transform: rotateY(0deg) translateZ(75px); background-image: url('front.png'); }
-.back   { transform: rotateY(180deg) translateZ(75px); background-image: url('back.png'); }
-.right  { transform: rotateY(90deg) translateZ(75px); background-image: url('right.png'); }
-.left   { transform: rotateY(-90deg) translateZ(75px); background-image: url('left.png'); }
-.top    { transform: rotateX(90deg) translateZ(75px); background-image: url('top.png'); }
-.bottom { transform: rotateX(-90deg) translateZ(75px); background-image: url('bottom.png'); }
-
-  @keyframes flipOnce {
-  from {
-    transform: rotateX(-30deg) rotateY(30deg);
-  }
-  to {
-    transform: rotateX(-396.2deg) rotateY(30deg);
-  }
-}
-
-</style>
+        
+    html, body {
+      font-family: 'Minecraft', monospace;
+      background-color: black;
+    }
+        
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 50px;
+    }
+        
+    .icon {
+        transition: transform 0.2s ease;
+    }
+    .icon:hover {
+        transform: scale(1.05);
+    }
+    </style>
 </head>
 <body>
-<div class="main-container">
-  <!-- Icon with hover effect -->
-  <a href="https://bloxd-icons.pages.dev/" target="_blank">
-    <img src="bloxd-icons.png" alt="Bloxd Icons" class="icon">
-  </a>
-
-  <!-- 3D Cube -->
-  <div class="cube-container">
-    <div class="cube">
-      <div class="front"></div>
-      <div class="back"></div>
-      <div class="right"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-      <div class="bottom"></div>
+    <div class="main-container">
+            <a href="https://bloxd-icons.pages.dev/" target="">
+                <img src="bloxd-icons.png" alt="Bloxd Icons" class="icon">
+            </a>
     </div>
-  </div>
-</div>
-  <script>
-const cube = document.querySelector('.cube');
-
-cube.addEventListener('mouseenter', () => {
-  cube.classList.remove('play'); // reset if needed
-  void cube.offsetWidth;         // force reflow
-  cube.classList.add('play');    // play animation
-});
-</script>
-
 </body>
 </html>
