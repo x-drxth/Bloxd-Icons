@@ -103,5 +103,15 @@ html, body {
     </div>
   </div>
 </div>
+  <script>
+const cube = document.querySelector('.cube');
+
+cube.addEventListener('mouseenter', () => {
+  cube.classList.remove('play'); // reset if needed
+  void cube.offsetWidth;         // force reflow
+  cube.classList.add('play');    // play animation
+});
+</script>
+
 </body>
 </html>
